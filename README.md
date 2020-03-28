@@ -28,6 +28,10 @@ By default the Visual and Architecture options are commented out, in order to di
 
 Example Images:
 ---------------
-![Void Linux Running SFetch](https://github.com/HenryDawson123/SFetch/blob/assets/sfetchexample.png)
+![Void Linux Running SFetch](https://github.com/HenryDawson123/SFetch/blob/assets/assets/sfetchexample.png)
 
 *Void Linux Running the Default SFetch Configuration*
+
+![Debian Linux Running SFetch](https://github.com/HenryDawson123/SFetch/blob/assets/assets/sfetchdebianexample.png)
+
+*Debian Linux Running the Default SFetch Configuration*
