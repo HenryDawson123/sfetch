@@ -11,6 +11,7 @@ This program was made to be faster and simpler than neofetch, made more for open
 TODO:
 -----
 
+- Provide a makefile for easier installation
 - Ascii art at some stage
 - Update uptime to include days aswell as hours and minutes
 - Improve source code readability and notation
