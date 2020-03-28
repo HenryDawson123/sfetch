@@ -29,3 +29,4 @@ Example Images:
 ---------------
 
 ![Void Linux Running SFetch](https://github.com/HenryDawson123/SFetch/blob/assets/sfetchexample.png)
+*Void Linux Running the Default SFetch Configuration*
