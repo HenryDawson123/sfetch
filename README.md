@@ -19,11 +19,15 @@ Go into the SFetch directory:
 
 Then:
 
-```$ make install```
+```$ sudo make install```
+
+Finally to run the program:
+
+```$ sfetch```
 
 If you wish to uninstall the program:
 
-```$ make uninstall```
+```$ sudo make uninstall```
 
 TODO:
 -----
