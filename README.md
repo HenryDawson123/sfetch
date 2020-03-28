@@ -6,7 +6,24 @@ A simple fetch program designed to be fast and small.
 Why it was made:
 ----------------
 
-This program was made to be faster and simpler than neofetch, made more for opening in a terminal as the terminal is launched it had to be fast and small enough to be unobtrusive.
+This program was made to be faster and simpler than neofetch, made more for opening in a terminal as the terminal is launched, it had to be fast and small enough to be unobtrusive.
+
+Installation Instructions:
+--------------------------
+
+To install:
+
+Go into the SFetch directory:
+
+```$ cd SFetch/```
+
+Then:
+
+```$ make install```
+
+If you wish to uninstall the program:
+
+```$ make uninstall```
 
 TODO:
 -----
