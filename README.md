@@ -1,4 +1,4 @@
-SFetch
+sfetch
 ======
 
 A simple fetch program designed to be fast and small.
