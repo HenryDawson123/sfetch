@@ -34,7 +34,6 @@ If you wish to uninstall the program:
 
 TODO:
 -----
-<img src="https://github.com/HenryDawson123/SFetch/blob/assets/assets/sfetchdebianexample.png" width=50% align="right">
 - Provide a makefile for easier installation
 - Ascii art at some stage
 - Update uptime to include days aswell as hours and minutes
