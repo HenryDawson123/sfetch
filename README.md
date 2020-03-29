@@ -3,10 +3,14 @@ SFetch
 
 A simple fetch program designed to be fast and small.
 
+<p align="center"><img src="https://github.com/HenryDawson123/SFetch/blob/assets/assets/sfetchexample.png" width="350px"></p>
+
 Why it was made:
 ----------------
 
 This program was made to be faster and simpler than neofetch, made more for opening in a terminal as the terminal is launched, it had to be fast and small enough to be unobtrusive.
+
+<img src="https://github.com/HenryDawson123/SFetch/blob/assets/assets/sfetchdebianexample.png" width=25% align="left">
 
 Installation Instructions:
 --------------------------
@@ -47,12 +51,5 @@ You can comment and uncomment the lines in `int main()` to change what informati
 
 By default the Visual and Architecture options are commented out, in order to display them you should uncomment them.
 
-Example Images:
----------------
-![Void Linux Running SFetch](https://github.com/HenryDawson123/SFetch/blob/assets/assets/sfetchexample.png)
 
-*Void Linux Running the Default SFetch Configuration*
 
-![Debian Linux Running SFetch](https://github.com/HenryDawson123/SFetch/blob/assets/assets/sfetchdebianexample.png)
-
-*Debian Linux Running the Default SFetch Configuration*
