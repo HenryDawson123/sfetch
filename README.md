@@ -3,14 +3,13 @@ SFetch
 
 A simple fetch program designed to be fast and small.
 
-<p align="center"><img src="https://github.com/HenryDawson123/SFetch/blob/assets/assets/sfetchexample.png" width="350px"></p>
+<p align="center"><img src="https://github.com/HenryDawson123/SFetch/blob/assets/assets/sfetchexample.png" width="50%"></p>
 
 Why it was made:
 ----------------
 
 This program was made to be faster and simpler than neofetch, made more for opening in a terminal as the terminal is launched, it had to be fast and small enough to be unobtrusive.
 
-<img src="https://github.com/HenryDawson123/SFetch/blob/assets/assets/sfetchdebianexample.png" width=25% align="left">
 
 Installation Instructions:
 --------------------------
@@ -35,7 +34,7 @@ If you wish to uninstall the program:
 
 TODO:
 -----
-
+<img src="https://github.com/HenryDawson123/SFetch/blob/assets/assets/sfetchdebianexample.png" width=50% align="right">
 - Provide a makefile for easier installation
 - Ascii art at some stage
 - Update uptime to include days aswell as hours and minutes
