@@ -14,9 +14,13 @@ currently the Arcitechture and Visual outputs are commented out.
 #include <sys/sysinfo.h>
 #include <chrono>
 using namespace std;
+
+/* The majority of these classes and objects are pretty self explanatory so the notation/comments will probably be breif if at all present*/
+
 class systemInfo {
 public:
 	string getOS() {
+		/*This method could be seen as bad form will likely update and change this using popen() instead of system()*/
 		system("lsb_release -sd >/tmp/distro.out");
 		ifstream infile;
 		filename = "/tmp/distro.out";
@@ -48,6 +52,7 @@ public:
 		return UserHostLength;
 	}
 	string getDevice() {
+		/* Depending on your device this may not work, but with my tests on my devices it works*/
 		ifstream device;
 		filename = "/sys/devices/virtual/dmi/id/product_family";
 		device.open(filename);
@@ -57,6 +62,7 @@ public:
 		device.close();
 		return deviceName;
 	}
+	/* At some stage i will update these uptime objects to be one, with days included*/
 	int getUptime() {
 		struct sysinfo info;
 		sysinfo(&info);
@@ -80,7 +86,7 @@ public:
 	}
 	string getShell() {
 		shell = getenv("SHELL");
-		shell.erase(0,5);
+		shell.erase(0,5); /* This line gets rid of the /bin/ part of the SHELL variable. I have noticed that in my debian VM with FISH the shell is in /usr/bin/ and in that case it removes the /usr/ */
 		return shell;
 	}
 	string getTerm() {
@@ -162,6 +168,7 @@ int main() {
 	Colours Colours;
 	/*This is the string that underlines your hostname and username, if you have any other characters between them make sure to adjust the +1*/
 	string underline((systemInfo.getUserHostLength()+1),'~');
+	/* These are the lines referenced in the configuration instructions in the README.md comment or uncomment them to hide/show information */
 	cout << Colours.getTextColourBlue() << systemInfo.getUsername() << Colours.getTextColourNeutral() <<"@" << Colours.getTextColourGreen() << systemInfo.getHostname() << endl;
 	cout << Colours.getTextColourBlue() << underline << endl;
 	cout << Colours.getTextColourGreen() << "OS:       " << Colours.getTextColourNeutral() << systemInfo.getOS() << endl;

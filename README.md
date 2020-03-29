@@ -34,7 +34,7 @@ If you wish to uninstall the program:
 
 TODO:
 -----
-- Provide a makefile for easier installation
+- ~~Provide a makefile for easier installation~~
 - Ascii art at some stage
 - Update uptime to include days aswell as hours and minutes
 - Improve source code readability and notation
