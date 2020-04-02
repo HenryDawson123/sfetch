@@ -36,7 +36,7 @@ TODO:
 -----
 - ~~Provide a makefile for easier installation~~
 - Ascii art at some stage
-- Update uptime to include days aswell as hours and minutes
+- ~~Update uptime to include days aswell as hours and minutes~~
 - Improve source code readability and notation
 - (A very big maybe) Include support for MacOS and Windows
 

@@ -6,6 +6,7 @@ currently the Arcitechture and Visual outputs are commented out.
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <algorithm>
 #include <string>
 #include <stdlib.h>
@@ -62,27 +63,35 @@ public:
 		device.close();
 		return deviceName;
 	}
-	/* At some stage i will update these uptime objects to be one, with days included*/
-	int getUptime() {
+	string getUptime() {
 		struct sysinfo info;
 		sysinfo(&info);
 		uptime = info.uptime;
-		uptime = (uptime/60)/60;
-		initialUptime = uptime;
-		minutes = uptime - initialUptime;
-		minutes = minutes * 60;
-		return initialUptime;
-	}
-	int getUptimeMinutes() {
-		struct sysinfo info;
-		sysinfo(&info);
-		uptime = info.uptime;
-		uptime = (uptime/60)/60;
-		initialUptime = uptime;
-		minutes = uptime - initialUptime;
-		minutes = minutes * 60;
-		wholeMinutes = minutes;
-		return wholeMinutes;
+		/* if its greater than 60 minutes we'll put it in hours*/
+		if(uptime/60 >= 60) {
+			uptimeHour = (uptime/60)/60;
+			uptimeHourWhole = uptimeHour;
+			uptimeMinutes = uptimeHour - uptimeHourWhole;
+			uptimeMinutesWhole = uptimeMinutes * 60;
+			/* if its greater than 24 hours we'll put it in days */
+			if(uptimeHour >= 24) {
+				uptimeDay = uptimeHour/24;
+				uptimeDayWhole = uptimeDay;
+				uptimeHour = uptimeDay - uptimeDayWhole;
+				uptimeHour = uptimeHour * 24;
+				uptimeStream << uptimeDayWhole << "d " << uptimeHourWhole << "h " << uptimeMinutesWhole << "m";
+			}
+			else {
+				uptimeStream << uptimeHourWhole << "h " << uptimeMinutesWhole << "m";
+			}
+		}
+		else {
+			uptimeMinutes = uptime/60;
+			uptimeMinutesWhole = uptimeMinutes;
+			uptimeStream << uptimeMinutesWhole << "m";
+		}
+		uptimeString = uptimeStream.str();
+		return uptimeString;
 	}
 	string getShell() {
 		shell = getenv("SHELL");
@@ -112,11 +121,12 @@ public:
 	string getVisual() {
 		visual = getenv("VISUAL");
 		return visual;
-	}	
+	}
 private:
 	string distroLine, filename, hostname, username, deviceName, uptimeString, shell, terminal, kernelVersion, architecture, editor, visual, lineOne;
-	double uptime, minutes;
-	int initialUptime, wholeMinutes, usernameLength, hostnameLength, UserHostLength;
+	double uptime, uptimeMinutes, uptimeHour, uptimeDay;
+	int initialUptime, uptimeMinutesWhole, uptimeHourWhole, uptimeDayWhole, usernameLength, hostnameLength, UserHostLength;
+	stringstream uptimeStream;
 };
 class Colours {
 public:
@@ -175,7 +185,7 @@ int main() {
 	cout << Colours.getTextColourGreen() << "Host:     " << Colours.getTextColourNeutral() << systemInfo.getDevice() << endl;
 	cout << Colours.getTextColourGreen() << "Kernel:   " << Colours.getTextColourNeutral() << systemInfo.getKernel() << endl;
 //	cout << Colours.getTextColourGreen() << "Arch:     " << Colours.getTextColourNeutral() << systemInfo.getArch() << endl;
-	cout << Colours.getTextColourGreen() << "Uptime:   " << Colours.getTextColourNeutral() << systemInfo.getUptime()<< "h " << systemInfo.getUptimeMinutes() << "m" << endl;
+	cout << Colours.getTextColourGreen() << "Uptime:   " << Colours.getTextColourNeutral() << systemInfo.getUptime() << endl;
 	cout << Colours.getTextColourGreen() << "Terminal: " << Colours.getTextColourNeutral() << systemInfo.getTerm() << endl;
 	cout << Colours.getTextColourGreen() << "Shell:    " << Colours.getTextColourNeutral() << systemInfo.getShell() << endl;
 	cout << Colours.getTextColourGreen() << "Editor:   " << Colours.getTextColourNeutral() << systemInfo.getEditor() << endl;
