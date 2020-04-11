@@ -79,6 +79,7 @@ public:
 				uptimeDayWhole = uptimeDay;
 				uptimeHour = uptimeDay - uptimeDayWhole;
 				uptimeHour = uptimeHour * 24;
+				uptimeHourWhole = uptimeHour;
 				uptimeStream << uptimeDayWhole << "d " << uptimeHourWhole << "h " << uptimeMinutesWhole << "m";
 			}
 			else {
