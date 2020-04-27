@@ -59,8 +59,10 @@ To check whether your shell has these environmental variables defined please ent
 ```$ echo $VISUAL && echo $EDITOR```
 
 you should then recieve an output of two lines, with your Visual and Editor on each like so:
-```nvim
-nvim```
+
+`nvim`
+
+`nvim`
 
 If your output has these two variables, your good to go! You can then uncomment the two lines in `int main()`.
 
