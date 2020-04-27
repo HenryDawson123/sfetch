@@ -5,15 +5,7 @@ currently the Arcitechture and Visual outputs are commented out.
 */
 
 #include <iostream>
-#include <fstream>
-#include <sstream>
-#include <algorithm>
-#include <string>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/utsname.h>
-#include <sys/sysinfo.h>
-#include <chrono>
+#include "includes.h"
 using namespace std;
 
 /* The majority of these classes and objects are pretty self explanatory so the notation/comments will probably be breif if at all present*/
@@ -191,6 +183,6 @@ int main() {
 	cout << Colours.getTextColourGreen() << "Shell:    " << Colours.getTextColourNeutral() << systemInfo.getShell() << endl;
 	cout << Colours.getTextColourGreen() << "Editor:   " << Colours.getTextColourNeutral() << systemInfo.getEditor() << endl;
 //	cout << Colours.getTextColourGreen() << "Visual:   " << Colours.getTextColourNeutral() << systemInfo.getVisual() << endl;
-	cout << Colours.getColourBar() << endl;
+	cout << Colours.getColourBar() << endl; /*I would personally comment out this line if i were to uncomment the line below*/
 //	cout << Colours.getFullColourBar() << endl;
 }
