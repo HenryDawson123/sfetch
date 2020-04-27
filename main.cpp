@@ -1,19 +1,19 @@
 /* A Minimalist Fetch Program for the *nix terminal
 Configuration can be done by editing this source code
 Comment/Uncomment the lines in int main() to display or hide specifications,
-currently the Arcitechture and Visual outputs are commented out.
+by default the Arcitechture and Visual outputs are commented out.
 */
 
 #include <iostream>
 #include "includes.h"
 using namespace std;
 
-/* The majority of these classes and objects are pretty self explanatory so the notation/comments will probably be breif if at all present*/
+/* The majority of these classes and objects are pretty self explanatory so the notation/comments will probably be brief if at all present*/
 
 class systemInfo {
 public:
 	string getOS() {
-		/*This method could be seen as bad form will likely update and change this using popen() instead of system()*/
+/*This method could be seen as bad form will likely update and change this using popen() instead of system()*/
 		system("lsb_release -sd >/tmp/distro.out");
 		ifstream infile;
 		filename = "/tmp/distro.out";
@@ -45,7 +45,7 @@ public:
 		return UserHostLength;
 	}
 	string getDevice() {
-		/* Depending on your device this may not work, but with my tests on my devices it works*/
+/* Depending on your device this may not work, but with my tests on my devices it works*/
 		ifstream device;
 		filename = "/sys/devices/virtual/dmi/id/product_family";
 		device.open(filename);
@@ -59,13 +59,13 @@ public:
 		struct sysinfo info;
 		sysinfo(&info);
 		uptime = info.uptime;
-		/* if its greater than 60 minutes we'll put it in hours*/
+/* if its greater than 60 minutes we'll put it in hours*/
 		if(uptime/60 >= 60) {
 			uptimeHour = (uptime/60)/60;
 			uptimeHourWhole = uptimeHour;
 			uptimeMinutes = uptimeHour - uptimeHourWhole;
 			uptimeMinutesWhole = uptimeMinutes * 60;
-			/* if its greater than 24 hours we'll put it in days */
+/* if its greater than 24 hours we'll put it in days */
 			if(uptimeHour >= 24) {
 				uptimeDay = uptimeHour/24;
 				uptimeDayWhole = uptimeDay;
@@ -88,7 +88,8 @@ public:
 	}
 	string getShell() {
 		shell = getenv("SHELL");
-		shell.erase(0,5); /* This line gets rid of the /bin/ part of the SHELL variable. I have noticed that in my debian VM with FISH the shell is in /usr/bin/ and in that case it removes the /usr/ */
+/* This line gets rid of the /bin/ part of the SHELL variable. I have noticed that in my debian VM with FISH the shell is in /usr/bin/ and in that case it removes the /usr/ */
+		shell.erase(0,5);
 		return shell;
 	}
 	string getTerm() {
@@ -116,9 +117,12 @@ public:
 		return visual;
 	}
 private:
-	string distroLine, filename, hostname, username, deviceName, uptimeString, shell, terminal, kernelVersion, architecture, editor, visual, lineOne;
+	string distroLine, filename, hostname, username, deviceName,
+		uptimeString, shell, terminal, kernelVersion, architecture,
+		editor, visual, lineOne;
 	double uptime, uptimeMinutes, uptimeHour, uptimeDay;
-	int initialUptime, uptimeMinutesWhole, uptimeHourWhole, uptimeDayWhole, usernameLength, hostnameLength, UserHostLength;
+	int initialUptime, uptimeMinutesWhole, uptimeHourWhole, uptimeDayWhole, usernameLength,
+		hostnameLength, UserHostLength;
 	stringstream uptimeStream;
 };
 class Colours {
@@ -169,9 +173,9 @@ private:
 int main() {
 	systemInfo systemInfo;
 	Colours Colours;
-	/*This is the string that underlines your hostname and username, if you have any other characters between them make sure to adjust the +1*/
+/*This is the string that underlines your hostname and username, if you have any other characters between them make sure to adjust the +1*/
 	string underline((systemInfo.getUserHostLength()+1),'~');
-	/* These are the lines referenced in the configuration instructions in the README.md comment or uncomment them to hide/show information */
+/* These are the lines referenced in the configuration instructions in the README.md comment or uncomment them to hide/show information */
 	cout << Colours.getTextColourBlue() << systemInfo.getUsername() << Colours.getTextColourNeutral() <<"@" << Colours.getTextColourGreen() << systemInfo.getHostname() << endl;
 	cout << Colours.getTextColourBlue() << underline << endl;
 	cout << Colours.getTextColourGreen() << "OS:       " << Colours.getTextColourNeutral() << systemInfo.getOS() << endl;
