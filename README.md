@@ -3,7 +3,7 @@ sfetch
 
 A simple fetch program designed to be fast and small.
 
-<p align="center"><img src="https://github.com/HenryDawson123/SFetch/blob/assets/assets/sfetchexample.png" width="50%"></p>
+<p align="center"><img src="https://github.com/HenryDawson123/sfetch/blob/assets/assets/sfetchexample.png" width="50%"></p>
 
 Why it was made:
 ----------------
@@ -16,9 +16,9 @@ Installation Instructions:
 
 To install:
 
-Go into the SFetch directory:
+Go into the sfetch directory:
 
-```$ cd SFetch/```
+```$ cd sfetch/```
 
 Then:
 
