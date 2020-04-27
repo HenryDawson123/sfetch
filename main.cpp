@@ -1,7 +1,7 @@
 /* A Minimalist Fetch Program for the *nix terminal
 Configuration can be done by editing this source code
 Comment/Uncomment the lines in int main() to display or hide specifications,
-by default the Arcitechture and Visual outputs are commented out.
+by default the Arcitechture, Editor and Visual outputs are commented out.
 */
 
 #include <iostream>
@@ -185,7 +185,8 @@ int main() {
 	cout << Colours.getTextColourGreen() << "Uptime:   " << Colours.getTextColourNeutral() << systemInfo.getUptime() << endl;
 	cout << Colours.getTextColourGreen() << "Terminal: " << Colours.getTextColourNeutral() << systemInfo.getTerm() << endl;
 	cout << Colours.getTextColourGreen() << "Shell:    " << Colours.getTextColourNeutral() << systemInfo.getShell() << endl;
-	cout << Colours.getTextColourGreen() << "Editor:   " << Colours.getTextColourNeutral() << systemInfo.getEditor() << endl;
+/*Some machines may not have editor or visual variables defined in their shell configuration files, please check beforehand if you want to use these features*/
+//	cout << Colours.getTextColourGreen() << "Editor:   " << Colours.getTextColourNeutral() << systemInfo.getEditor() << endl;
 //	cout << Colours.getTextColourGreen() << "Visual:   " << Colours.getTextColourNeutral() << systemInfo.getVisual() << endl;
 	cout << Colours.getColourBar() << endl; /*I would personally comment out this line if i were to uncomment the line below*/
 //	cout << Colours.getFullColourBar() << endl;

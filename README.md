@@ -47,7 +47,7 @@ To configure and change this program you will need to edit the source code and r
 
 You can comment and uncomment the lines in `int main()` to change what information is displayed.
 
-By default the Visual and Architecture options are commented out, in order to display them you should uncomment them.
+By default the Editor, Visual and Architecture options are commented out, in order to display them you should uncomment them.
 
 
 
