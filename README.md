@@ -49,5 +49,19 @@ You can comment and uncomment the lines in `int main()` to change what informati
 
 By default the Editor, Visual and Architecture options are commented out, in order to display them you should uncomment them.
 
+Please Note:
+------------
 
+Some shells do not define the environmental variables `$EDITOR` or `$VISUAL` by default, if you wish to show these in sfetch, please ensure these are defined in your shell configuration file before uncommenting the lines in `int main()`.
 
+To check whether your shell has these environmental variables defined please enter:
+
+```$ echo $VISUAL && echo $EDITOR```
+
+you should then recieve an output of two lines, with your Visual and Editor on each like so:
+```nvim
+nvim```
+
+If your output has these two variables, your good to go! You can then uncomment the two lines in `int main()`.
+
+If one or both of these lines are blank, please consult the configuration instructions for your specific shell to define environmental variables.
